@@ -1,0 +1,49 @@
+- runFlow:
+    label: 01 - Pengguna klik menu screen Transaksi
+    commands: 
+- runFlow:
+    label: 02 - Akan diarahkan ke halaman Transaksi
+    commands: 
+
+- runFlow:
+    label: 03 - Pengguna klik sub menu Atur Limit Transaksi
+    commands: 
+- runFlow:
+    label: 04 - Akan diarahkan ke halaman limit transaksi
+    commands: 
+
+- runFlow:
+    label: 05 - Pengguna memilih atur limit pada Transfer sesama BNI dan VA
+    commands: 
+- runFlow:
+    label: 06 - Akan diarahkan ke halaman Transfer sesama BNI dan VA
+    commands: 
+
+- runFlow:
+    label: 07 - Pengguna input limit transaksi
+    commands: 
+- runFlow:
+    label: 08 - Berhasil menginput limit transaksi pada field yang telah disediakan
+    commands: 
+
+- runFlow:
+    label: 09 - Pengguna klik button simpan
+    commands: 
+- runFlow:
+    label: 10 - Maka saya akan diarahkan ke overlay bahwa 'Terdapat transaksi terjadwal yang nilainya lebih dari limit baru kamu. Apabila kamu melanjutkan perubahan limit ini, maka transaksi terjadwal kamu akan dibatalkan. Apakah kamu tetap ingin melanjutkan perubahan limit?'
+    commands: 
+
+- runFlow:
+    label: 11 - Pengguna klik button 'Lanjut'
+    commands: 
+- runFlow:
+    label: 12 - Akan diarahkan ke halaman input MPIN
+    commands: 
+
+- runFlow:
+    label: 13 - Berhasil mengatur limit transaksi
+    commands: 
+- runFlow:
+    label: 14 - Successfull toast message ditampilkan setelah berhasil melakukan atur limit transaksi
+    commands: 
+

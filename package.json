@@ -1,0 +1,23 @@
+{
+  "name": "generate-label",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "node src/main.js",
+    "convert": "node src/utils/convertTStoTC.js",
+    "combine": "node src/utils/combineLabels.js",
+    "lable": "node src/utils/combineLabels.js",
+    "generate-all": "node src/main.js && npm run convert && npm run combine && npm run"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "dotenv": "^17.2.3"
+  }
+}

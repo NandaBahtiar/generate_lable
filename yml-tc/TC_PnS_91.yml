@@ -1,0 +1,86 @@
+appId: ${APP_ID}
+env:
+  PATH_FOLDER_REPORT: ./reports
+onFlowStart:
+  - runScript:
+      file: ../../../../configs/onflowstart/onflowstart.js
+      env:
+        JIRA_ISSUE: ${JIRA_ISSUE}
+  - runScript:
+      file: ../../../../configs/get-balance.js
+      env:
+        BALANCE_STATE: before
+onFlowComplete:
+  - runScript: ../../../../configs/onflowend/onflowend.js
+
+---
+
+- runFlow:
+    label: 01 - Pengguna klik menu screen Transaksi
+    commands:
+
+      - runFlow:
+          label: 02 - Akan diarahkan ke halaman Transaksi
+          commands:
+            - waitForAnimationToEnd
+            - takeScreenshot: ${output.PATH_FOLDER_REPORT}/01_${TC}
+
+- runFlow:
+    label: 03 - Pengguna klik sub menu Atur Limit Transaksi
+    commands:
+
+      - runFlow:
+          label: 04 - Akan diarahkan ke halaman limit transaksi
+          commands:
+            - waitForAnimationToEnd
+            - takeScreenshot: ${output.PATH_FOLDER_REPORT}/02_${TC}
+
+- runFlow:
+    label: 05 - Pengguna memilih atur limit pada Transfer sesama BNI dan VA
+    commands:
+
+      - runFlow:
+          label: 06 - Akan diarahkan ke halaman Transfer sesama BNI dan VA
+          commands:
+            - waitForAnimationToEnd
+            - takeScreenshot: ${output.PATH_FOLDER_REPORT}/03_${TC}
+
+- runFlow:
+    label: 07 - Pengguna input limit transaksi
+    commands:
+
+      - runFlow:
+          label: 08 - Berhasil menginput limit transaksi pada field yang telah disediakan
+          commands:
+            - waitForAnimationToEnd
+            - takeScreenshot: ${output.PATH_FOLDER_REPORT}/04_${TC}
+
+- runFlow:
+    label: 09 - Pengguna klik button simpan
+    commands:
+
+      - runFlow:
+          label: 10 - Maka saya akan diarahkan ke overlay bahwa 'Terdapat transaksi terjadwal yang nilainya lebih dari limit baru kamu. Apabila kamu melanjutkan perubahan limit ini, maka transaksi terjadwal kamu akan dibatalkan. Apakah kamu tetap ingin melanjutkan perubahan limit?'
+          commands:
+            - waitForAnimationToEnd
+            - takeScreenshot: ${output.PATH_FOLDER_REPORT}/05_${TC}
+
+- runFlow:
+    label: 11 - Pengguna klik button 'Lanjut'
+    commands:
+
+      - runFlow:
+          label: 12 - Akan diarahkan ke halaman input MPIN
+          commands:
+            - waitForAnimationToEnd
+            - takeScreenshot: ${output.PATH_FOLDER_REPORT}/06_${TC}
+
+- runFlow:
+    label: 13 - Berhasil mengatur limit transaksi
+    commands:
+
+      - runFlow:
+          label: 14 - Successfull toast message ditampilkan setelah berhasil melakukan atur limit transaksi
+          commands:
+            - waitForAnimationToEnd
+            - takeScreenshot: ${output.PATH_FOLDER_REPORT}/07_${TC}

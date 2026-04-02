@@ -1,0 +1,8 @@
+JIRA_USERNAME = nanda.bashori
+JIRA_PASSWORD = bniMM1234/
+JIRA_BASE_URL = "https://jira.bni.co.id"
+JIRA_VERSION_NAME = Regression R5
+JIRA_CYCLE_NAME = Feature R5
+FILE_LOCATION = 
+JIRA_PAGINATION = 1
+JIRA_LABELS = TS_BCD_20
